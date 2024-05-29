@@ -1,0 +1,58 @@
+body{
+    background-color: #000;
+       background-image:url('../images/high_scores.png') ;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-size:contain;
+       -webkit-text-stroke: 0.5px white; /* width and color */
+       color: red;
+       /* font-family: sans; */
+       font-family: 'Rowdies', cursive;
+       font-size: larger;
+       font-weight: bold;
+}
+p{
+    -webkit-text-stroke: 0.5px white; /* width and color */
+       color: red;
+       /* font-family: sans; */
+       font-family: 'Rowdies', cursive;
+       font-size: larger;
+       font-weight: bold;
+}
+#big-div{
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    left: 42%;
+    top: 23%;
+    padding: 2px;
+}
+
+#ok{
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+    display: inline-block;
+    width: 10.6vw;
+    height: 6vh;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 66vh;
+    margin-left: 43vw;
+}
+
+.inner-div{
+    padding: 2vh;
+}
+
+
+
+
+
+
+
+
+
+

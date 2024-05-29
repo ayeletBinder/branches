@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new_player.css">
+</head>
+<body>
+
+    <div class="form-popup" id="myForm">
+        <div id="back-ground-div">
+            <form action="./myfarm.html" class="form-container">
+
+                <input id="nameinput" type="text" placeholder="enter yuor name" name="name" required>
+                        
+                <button id="ok10" type="button" class="btn"></button>
+                <button type="button" class="btn cancel" ></button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+
+    document.querySelector("#ok10").addEventListener("click",function(){
+        let playerName = document.getElementById("nameinput").value; 
+        let p = { name: playerName, moeny: 0 };
+        if(localStorage.getItem('players')==null)
+        {
+            localStorage.setItem('players',JSON.stringify([]));
+        }
+        let currentplayer=JSON.parse(localStorage.getItem('players'));
+        currentplayer.unshift(p);
+        localStorage.setItem('players',JSON.stringify(currentplayer));
+        console.log(currentplayer[1].name+' currentplayer');
+        window.location.href="./myfarm.html";
+    })
+
+    document.querySelector('.cancel').addEventListener("click",function(){
+        window.close();
+    })
+
+
+        // let arrname=[],pcount=0;
+    // function createNewPlayer(){
+    //     let playerName = document.getElementById("nameinput").value; 
+    //     let p = { name: playerName, moeny: 0 };
+    //     arrname.push(p);
+    //     pcount++;
+    //     endOfTheGame();
+    //     window.open('./myfarm.html');
+    // }
+    // function endOfTheGame(){
+    // console.log(arrname[pcount-1].name);
+    // console.log(arrname[pcount-1].moeny);
+
+    // localStorage.setItem("sumOfmoeny",0);
+    // let summery=JSON.stringify(arrname[pcount-1].moeny);
+    // localStorage.setItem("arrname[pcount-1].moeny",summery);
+    // localStorage.setItem("nameofplayer",arrname[pcount-1].name);
+    // let names=JSON.stringify(arrname[pcount-1].name)
+    // localStorage.setItem("arrname[pcount-1].name",names);
+
+    // console.log( localStorage.getItem("sumOfmoeny"));
+    // console.log( localStorage.getItem("nameofplayer"));
+    // }
+
+
+
+
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

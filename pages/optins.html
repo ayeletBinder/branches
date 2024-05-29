@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+       <link rel="stylesheet" type="text/css" href="optins.css">
+  
+ <body>
+  <div class="container">
+    <img src="../images/צילום מסך 2023-07-01 000240.png" class="image">
+    <div class="centered-div">
+      <div class="slidecontainer">
+        <p >Music</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+          <p>Value: <span id="vol1"></span></p> 
+          <p>Sound Effect</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+          <p>Value: <span id="vol2"></span></p> 
+           <p>Ambiend Sound</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange3"> 
+        <p>Value: <span id="vol3"></span></p> 
+        </div>
+        <div class="flex-container"> 
+         <button class="ok"></button>
+        <button class="cancel"></button>
+      </div>
+    </div>
+  </div> 
+
+      <script>
+      let slider1 = document.getElementById("myRange1");
+      let output1 = document.getElementById("vol1");
+      let slider2 = document.getElementById("myRange2");
+      let output2 = document.getElementById("vol2");
+      let slider3 = document.getElementById("myRange3");
+      let output3 = document.getElementById("vol3");
+      output1.innerHTML = slider1.value;
+      output2.innerHTML = slider2.value;
+      output3.innerHTML = slider3.value;  
+
+  slider1.oninput = function() { 
+         output1.innerHTML = this.value; 
+  }
+       slider2.oninput = function() { 
+         output2.innerHTML = this.value; 
+       }  
+       slider3.oninput = function() { 
+         output3.innerHTML = this.value; 
+       }
+      
+       </script>
+<!-- // </body> -->
+<!-- // </html>  -->
+<!-- // <!DOCTYPE html> 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+/* input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+} */
+
+/* Set a style for all buttons */
+
+/* Extra styles for the cancel button */
+
+
+/* Center the image and position the close button */
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 6; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width:50vw; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <img src="../images/צילום מסך 2023-07-01 000240.png" class="image">
+      <div class="centered-div">
+        <div class="slidecontainer">
+          <p >Music</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+             <p>Value: <span id="vol1"></span></p> -->
+            <!-- <p>Sound Effect</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+             <p>Value: <span id="vol2"></span></p> -->
+            <!-- <p>Ambiend Sound</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange3"> -->
+            <!-- <p>Value: <span id="vol3"></span></p> -->
+          <!-- </div>
+          <div class="flex-container">
+          <button class="ok"></button>
+          <button class="cancel"></button>
+        </div>
+      </div>
+
+    
+  </form>
+</div>
+
+<script> -->
+// Get the modal
+// var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
+<!-- // </script> -->
+
+<!-- // </body> -->
+<!-- </html>  -->

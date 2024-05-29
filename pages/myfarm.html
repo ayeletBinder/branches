@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myfarm</title>
+</head>
+<link rel="stylesheet" type="text/css" href="optins.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@500&display=swap" rel="stylesheet">
+<style>
+       body{
+        background-color: #000;
+           background-image:url('../images/home.png') ;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size:contain;
+           -webkit-text-stroke: 0.5px white; /* width and color */
+           color: red;
+           /* font-family: sans; */
+           font-family: 'Rowdies', cursive;
+           font-size: larger;
+       }
+       .newranch{
+          margin-top: 41vh;
+          height: 9vh;
+          width: 22vw;
+    /* padding: 3% 12%; */
+
+        }
+        .tropyRoom{
+          margin-top: 52vh;
+          height: 7vh;
+          width: 22vw;
+          /* padding: 3% 12%; */
+    
+        }
+        .highScore{
+            margin-top: 60vh;
+            height: 7vh;
+            width: 22vw;
+        }
+        .options{
+          margin-top: 70vh;
+            height: 7vh;
+            width: 22vw;
+        }
+       .button{
+        position: absolute;
+        margin-left: 37vw;
+        background-color: transparent;
+        border: none;
+        color: transparent;
+        display: inline-block;
+        cursor: pointer;
+       } 
+
+</style>
+<body > 
+  
+  <audio id="Audio" src="../sound/merry-farm-127398.mp3" autoplay loop></audio>
+    <div id="main">
+      <button class="newranch button"></button>
+        <button  class="tropyRoom button"></button> 
+        <button id="highScore" class="highScore button"></button>
+        <button id="options" class="options button"></button>
+        <button id="new-player" class="new-player button"></button>
+    </div>
+    <div id="id01" class="modal">
+  
+      <div class="modal-content animate"  method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    <div class="container">
+      <img src="../images/צילום מסך 2023-07-01 000240.png" class="image">
+      <div class="centered-div">
+        <div class="slidecontainer">
+          <p >Music</p>
+            <input type="range" min="0" max="100" value="50" class="slider" id="Range1">
+            <!-- <p style="display: none;">Value: <span id="vol1"></span></p> -->
+            <p>Sound Effect</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="Range2">
+            <!-- <p>Value: <span id="vol2"></span></p> -->
+            <p>Ambiend Sound</p>
+            <input type="range" min="1" max="100" value="50" class="slider" id="Range3">
+            <!-- <p>Value: <span id="vol3"></span></p> -->
+          </div>
+          <div class="flex-container">
+          <button class="ok"></button>
+          <button class="cancel"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+  
+       document.querySelector('.newranch').addEventListener("click",function(){
+          window.open('./media.html')
+       })
+       eventOfAudio=document.addEventListener("DOMContentLoaded",playAudio);
+       function playAudio()
+      {
+        document.getElementById("highScore").addEventListener("click",function(){
+          window.location.href="./highscoure.html";
+      })
+      document.getElementById("new-player").addEventListener("click",function(){
+    window.location.href="./new_player.html";
+  })
+             navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+              
+               let x =new Audio("../sound/merry-farm-127398.mp3"); 
+               x.loop= true;
+                console.log("before :"+x.volume)
+                x.volume=0.2;
+                console.log("after :"+x.volume)
+               x.play();
+                const broadcastChannel = new BroadcastChannel('audio-control');
+
+                // Listen for messages from other tabs
+                broadcastChannel.addEventListener('message', event => {
+                    if (event.data.action === 'stopAudio') {
+                        // Stop the audio
+                        x.pause();
+                    }
+});
+
+
+               
+
+
+               // stop microphone stream acquired by getUserMedia
+              stream.getTracks().forEach(function (track) { track.stop(); })
+             });
+       }
+       let vol1,vol2,vol3;
+ let event2=document.querySelector(".cancel").addEventListener("click",close1)
+     document.getElementById("options").addEventListener("click",function(){
+          console.log("huhu");
+          document.getElementById('id01').style.display='block';  
+          let slider1 = document.getElementById("Range1");
+          // let output1 = document.getElementById("vol1");
+          let slider2 = document.getElementById("Range2");
+          // let output2 = document.getElementById("vol2");
+          let slider3 = document.getElementById("Range3");
+          // let output3 = document.getElementById("vol3");
+          slider1.oninput = function() {
+          vol1 = this.value;
+      }   
+      })
+        
+      // slider2.oninput = function() {
+      //   vol2 = this.value;
+      // } 
+      // slider3.oninput = function() {
+      //   vol3 = this.value;
+      // }
+      
+    let  event1= document. querySelector(".ok").addEventListener('click',function(){ 
+        document.getElementById("Audio").volume= vol1/100;
+      close1();
+      
+})
+      function close1(){
+        document.getElementById('id01').style.display='none';
+        console.log("hello i am closing");
+        // removeEventListener(eventOfAudio);
+      }
+    
+</script>
+</html>

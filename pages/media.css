@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+}
+video{
+    position: absolute;
+    height: 98.9%;
+    width: 96%;
+    z-index: 1;
+}
+button{
+    color: transparent;
+    height: 5vh;
+    width: 8vw;
+    z-index: 5;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#skip{
+    margin-top: 5vh;
+    margin-left: 70vw;
+
+}
+#next{
+    margin-top: 90vh;
+    margin-left: 70vw;
+}
+#continue1{
+    display: none;
+    margin-top: 90vh;
+    margin-left: 70vw;
+}

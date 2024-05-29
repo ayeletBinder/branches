@@ -1,0 +1,72 @@
+.imgTip{
+    height: 20vh;
+    width: 10vh;
+    z-index: 2;
+}
+body{
+    /* background-color: transparent; */
+
+}
+.buybutton{
+    color: transparent;
+    z-index: 5;
+    /* position: absolute; */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 22vh;
+}
+.first-div {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    text-align: center;
+    /* position: absolute; */
+    top: 50%;
+    left: 55%;
+    /* left: 53%; */
+    transform: translate(-1%, -51%);
+    height: 63vh;
+}
+.second-div{
+       z-index: 2;
+    position: relative;
+    bottom: 450px;
+    left: 5px;
+}
+
+        /* z-index: 2;
+        position: relative;
+        bottom: 0vh;
+        left: 53.5vw;
+        } */
+#close{
+    right: 55px;
+    z-index: 2;
+    position: absolute;
+    bottom: -70px;
+
+}
+/* css for the tips */
+#imgTip{
+    z-index: 2;
+}
+.button-tips{
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    bottom: -6px;
+        right: 1px;
+    text-align: center;
+}
+#tips{
+    position: fixed;
+    display: none;
+    left: 35%;
+    right:35%;
+}
+.imgTip{
+    height: 20vh;
+    width: 10vh;
+    z-index: 2;
+}

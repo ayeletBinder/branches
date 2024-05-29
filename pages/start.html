@@ -1,0 +1,62 @@
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="start.css">
+    <link rel="stylesheet" href="buy.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <div id="bottom-image"></div> -->
+     <!-- <img src="../images/ground.png" draggable="true" ondragstart="drag(event)" id="drag1" >
+     <img src="../images/ground.png" draggable="true" ondragstart="drag(event)" id="drag2" > -->
+     <!-- <button id="click" style="width:100px; height:100px; background-color: red;">click to finish the game</button> -->
+
+    <div class="clickDiv" id="ground-div" ondrop="drop(event)" ></div>
+    <div class="clickDiv1" id="vect-div" ondrop="drop(event)" ></div>
+    <div id="bottom-div">
+    <div class="flex-container"> 
+        <button class="button store"></button>
+    </div>
+    <div class="sum">
+            <p class="sum-p">$</p>
+    </div>
+    <!-- <img id="timerimage" src="../images/timer1.png" alt=""> -->
+    <button id="menu-button"></button>
+</div>
+ <button class="buybutton" id="before-starting"><img src="../images/beforestarting.png" alt=""></button>
+  <div id="div-startbefore">
+     <img draggable="true" class="img-startbefore" id="house" src="../images/house.png" alt="">
+     <img draggable="true" class="img-startbefore" id="water" src="../images/water.png" alt="">
+     <img draggable="true" class="img-startbefore" id="boxes" src="../images/box.png" alt="">
+  </div>
+  <div class="div-drog" id="div-drog1"></div>
+  <div class="div-drog" id="div-drog2"></div>
+  <div class="div-drog" id="div-drog3"></div>
+   <div class="first-div">
+    <img class="background_img" src="../images/buy.png" alt="">
+    <div class="second-div">
+        <button class="buybutton" id="buybutton1"><img src="../images/buybutton1.png" alt=""></button>
+        <button class="buybutton" id="buybutton2"><img src="../images/buybutton2.png" alt=""></button>
+        <button class="buybutton" id="buybutton3"><img src="../images/buybutton3.png" alt=""></button>
+    </div>
+    <button id="close" class="buybutton"><img src="../images/close.png" alt=""></button>
+    </div>
+    <img src="../images/girlStand.png" id="thing" class="animate">
+    <!-- <img src="../images/check (2).png" class="thing1" > -->
+    <div id="div_up">
+        <div id="tomato-amount"></div>
+        <div id="flower-amount"></div>
+    </div>
+    <div class="container1" >
+        <img style="display: none;" id="animatedImage" src="../images/great-job-icon-31167.png" alt="Animated Image">
+    </div>
+    <script src="./start.js"></script>
+    <script src="./start1.js"></script>
+   
+</body>
+</html>

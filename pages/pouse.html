@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pouse.css">
+    <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" type="text/css" href="optins.css">
+</head>
+<body>
+  
+     <div id="pagepouse">
+      <img src="../images/page.png" alt="">
+        <div id="button-img">
+            <button id="continue" onclick=" window.location.href=history.back(); return false;"><img src="../images/continue.png" alt=""></button>
+            <button id="trophy"><img src="../images/trophy room.png" alt=""></button>
+            <button id="option"><img src="../images/option.png" alt=""></button>
+            <button id="tips1"><img src="../images/tips.png" alt=""></button>
+            <button id="menu"><img src="../images/main menu.png" alt=""></button>
+        </div>
+    </div>
+    <div id="tips">
+        <img id="imgTip" src="../tips/1.png" alt="">
+        <div class="button-tips">
+            <button class="buybutton" id="back"><img src="../images/back.PNG" alt=""></button>
+            <button class="buybutton" id="ok"><img src="../images/ok.png" alt=""></button>
+            <button class="buybutton" id="next"><img src="../images/next.PNG" alt=""></button>
+        </div>
+    </div>  
+      <div id="id01" class="modal">
+          <div class="modal-content animate"  method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+        <div class="container">
+          <img src="../images/צילום מסך 2023-07-01 000240.png" class="image">
+          <div class="centered-div">
+            <div class="slidecontainer">
+              <p >Music</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="Range1">
+                <p>Sound Effect</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="Range2">
+                <p>Ambiend Sound</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="Range3">
+              </div>
+              <div class="flex-container">
+              <button class="ok"></button>
+              <button class="cancel"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="tips.js"></script>
+    <script src="pouse.js"></script>
+</body>
+</html>

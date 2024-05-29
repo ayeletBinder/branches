@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./high_score.css">
+</head>
+<body>
+    <div id="big-div">
+        <div class="inner-div" id="name-div">
+            <p id="p1name" class="p1name">2</p>
+            <p id="p2name" class="p2name">2</p>
+            <p id="p3name" class="p3name">2</p>
+            <p id="p4name" class="p4name">2</p>
+        </div>
+        <div class="inner-div" id="sum-div">
+            <p id="p1sum">-1</p>
+            <p id="p2sum">-1</p>
+            <p id="p3sum">-1</p>
+            <p id="p4sum">-1</p>
+        </div>
+    </div>
+    <button id="ok"></button>
+    <script>
+        document.getElementById("ok").addEventListener("click",function(){
+            window.location.href="./myfarm.html";
+        })
+
+
+        let m={max1:0,max2:0,max3:0,max4:0,maxindex1:0,maxindex2:0,maxindex3:0,maxindex4:0};
+        let n, s,temp=0,tempindex=1;
+        currentplayer=JSON.parse(localStorage.getItem('players'));
+            for (let i = 0; i < currentplayer.length; i++){
+                if(currentplayer[i].moeny>m.max1){
+                    m.max4=m.max3;
+                    m.maxindex4=m.maxindex3;
+                    m.max3=m.max2;
+                    m.maxindex3=m.maxindex2;
+                    m.max2=m.max1;
+                    m.maxindex2=m.maxindex1;
+                    m.max1=currentplayer[i].moeny;
+                    m.maxindex1=i;
+                }
+                else{
+                    if(currentplayer[i].moeny>m.max2){
+                        m.max4=m.max3;
+                        m.maxindex4=m.maxindex3;
+                        m.max3=m.max2;
+                        m.maxindex3=m.maxindex2;
+                        m.max2=currentplayer[i].moeny;
+                        m.maxindex2=i;
+                    }
+                    else{
+                        if(currentplayer[i].moeny>m.max3){
+                            m.max4=m.max3;
+                            m.maxindex4=m.maxindex3;
+                            m.max3=currentplayer[i].moeny;
+                            m.maxindex3=i;
+                        }
+                        else{
+                            if(currentplayer[i].moeny>m.max3){
+                                m.max4=currentplayer[i].moeny;
+                                m.maxindex4=i;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+            console.log(currentplayer[m.maxindex1].moeny)
+            console.log(currentplayer[m.maxindex1].name)
+            console.log(currentplayer[m.maxindex2].moeny)
+            console.log(currentplayer[m.maxindex2].name)
+            console.log(currentplayer[m.maxindex3].moeny)
+            console.log(currentplayer[m.maxindex3].name)
+            console.log(currentplayer[m.maxindex4].moeny)
+            console.log(currentplayer[m.maxindex4].name)
+        for (let i = 1; i < 5 ; i++)
+        {
+            s = "p" + i + "sum";
+            n = "p" + i + "name";
+                let mx="max"+i;
+                console.log(m[mx]+"maxi");
+                document.getElementById(s).textContent =m[mx] ;
+                let mxi="maxindex"+i;
+                console.log(currentplayer[m[mxi]].name);
+                document.getElementById(n).textContent =currentplayer[m[mxi]].name;
+        }
+        // for (let i = 1; i < 5 ; i++){
+        //     s = "p" + i + "sum";
+        //     n = "p" + i + "name";
+        //     console.log(document.getElementById(s).textContent);
+        //     console.log(document.getElementById(n).textContent);
+        //     if(document.getElementById(s).textContent<=0){
+        //         document.getElementById(s).style.display='none';
+        //     }
+        //     else{
+        //         document.getElementById(s).style.display='block';
+        //         document.getElementById(n).style.display='block';
+        //     }
+        // }
+
+    
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

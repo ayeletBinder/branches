@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Element Replacement Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+    #ground-container {
+      position: absolute;
+      width: 40vw;
+      height: 50vh;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -39%);
+      border: 2px solid #000;
+      background-color: #fff;
+    }
+    img {
+      position: absolute;
+    }
+    #k{
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="ground-container">
+    <img id="element" src="../images/buybutton01.png">
+    <button class="button" id="k">Normal Button</button>
+
+  </div>
+
+  <script>
+    document.getElementById("k").addEventListener("click",function(){
+      window.open("media.html");
+    })
+    // Get the game container and the element to replace
+    const groundContainer = document.getElementById('ground-container');
+    const element = document.getElementById('element');
+
+    // Define the boundaries of the specific area
+    const areaLeft = 100;
+    const areaTop = 100;
+    const areaRight = groundContainer.clientWidth - 100;
+    const areaBottom = groundContainer.clientHeight - 100;
+
+    // Event listeners to handle mouse actions
+    element.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+
+    // Flag to indicate if the user is currently dragging the element
+    let isDragging = false;
+
+    // Function to handle mouse down event
+    function handleMouseDown(event) {
+      // Set the flag to indicate dragging has started
+      isDragging = true;
+    }
+
+    // Function to handle mouse move event
+    function handleMouseMove(event) {
+      // If dragging is not in progress, do nothing
+      if (!isDragging) return;
+
+      // Calculate the current position of the element
+      const currentX = event.clientX - groundContainer.getBoundingClientRect().left;
+      const currentY = event.clientY - groundContainer.getBoundingClientRect().top;
+
+      // Calculate the constrained position within the specific area
+    //   const constrainedX = Math.min(Math.max(currentX, areaLeft), areaRight - element.width);
+    //   const constrainedY = Math.min(Math.max(currentY, areaTop), areaBottom - element.height);
+
+      // Update the element's position to match the constrained position
+      element.style.left = `${constrainedX}px`;
+      element.style.top = `${constrainedY}px`;
+    }
+
+    // Function to handle mouse up event
+    function handleMouseUp() {
+      // Set the flag to indicate dragging has ended
+      isDragging = false;
+    }
+  </script>
+</body>
+</html>
+
